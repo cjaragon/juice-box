@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class From extends Component {
+class Form extends Component {
     constructor() {
         super()
         this.state = {
@@ -15,18 +15,18 @@ class From extends Component {
     
     render() {
         return (
-            <form>
+            <form className='form'>
                 <input
                 className='input'
-                placeholder=''
+                placeholder='Title'
                 onChange=''/>
                 <input
                 className='input'
-                placeholder=''
+                placeholder='Artist'
                 onChange=''/>
                 <input
                 className='input'
-                placeholder=''
+                placeholder='Genre'
                 onChange=''/>
                 <button
                 className='form-button'

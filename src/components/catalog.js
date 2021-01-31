@@ -11,13 +11,13 @@ class Catalog extends Component {
 
     render() {
         return (
-            <section className='catalog'>
+            <div className='catalog'>
                 <h1> CATALOG </h1>
                 <br/>
                 <div className='list'>
                     <Song/>
                 </div>
-            </section>
+            </div>
         )
     }
 }
