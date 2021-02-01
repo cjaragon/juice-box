@@ -1,16 +1,17 @@
-const Song = () => {
+const Song = (props) => {
+    const {title, artist, genre} = props
     return (
         <div className='song'>
             <div className='song-info'>
-                <p className='song-text'> Title: </p>
-                <p className='song-text'> Artist: </p>
-                <p className='song-text'> Genre: </p>
+                <p className='song-text'> Title: {title} </p>
+                <p className='song-text'> Artist: {artist} </p>
+                <p className='song-text'> Genre: {genre} </p>
             </div>
             <div className='button-menu'>
                 <button className='song-buttons'
-                onClick=''> E </button>
+                > E </button>
                 <button className='song-buttons'
-                onClick=''> X </button>
+                > X </button>
             </div>
         </div>
     )

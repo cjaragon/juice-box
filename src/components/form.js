@@ -4,13 +4,25 @@ class Form extends Component {
     constructor() {
         super()
         this.state = {
-            input: {
-                title: '',
-                artist: '',
-                genre: ''
-            }
+            
+            title: '',
+            artist: '',
+            genre: ''
+            
         }
         
+    }
+
+    handleTitle = (val) => {
+        this.setState({ title: val })
+    }
+
+    handleArtist = (val) => {
+        this.setState({ artist: val })
+    }
+
+    handleGenre = (val) => {
+        this.setState({ genre: val })
     }
     
     render() {
@@ -19,18 +31,18 @@ class Form extends Component {
                 <input
                 className='input'
                 placeholder='Title'
-                onChange=''/>
+                onChange={e => this.handleTitle(e.target.value)}/>
                 <input
                 className='input'
                 placeholder='Artist'
-                onChange=''/>
+                onChange={e => this.handleArtist(e.target.value)}/>
                 <input
                 className='input'
                 placeholder='Genre'
-                onChange=''/>
+                onChange={e => this.handleGenre(e.target.value)}/>
                 <button
                 className='form-button'
-                onClick=''> Add Song </button>
+                > Add Song </button>
             </form>
         )
     }

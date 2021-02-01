@@ -1,9 +1,9 @@
 import Catalog from './catalog'
 
-const Jukebox = () => {
+const Jukebox = (props) => {
     return (
         <div className='jukebox'>
-            <Catalog/>
+            <Catalog songList={props.songList}/>
         </div>
     )
 }
