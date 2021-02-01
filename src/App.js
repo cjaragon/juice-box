@@ -18,10 +18,17 @@ class App extends Component {
     .catch (err => console.log(err))
   }
 
+  addSong = (e, val) => {
+    e.preventDefault()
+    axios.post('/api/songs', val )
+    .then(res =>{this.setState({ songList: res.data })})
+  }
+
+  
   render() {
     return (
       <div className="App">
-        <Header/>
+        <Header addSong={this.addSong} />
         <Jukebox songList={this.state.songList} />
       </div>
     );

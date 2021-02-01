@@ -4,13 +4,13 @@ import logo from './logo.png'
 
 
 
-const Header = () => {
+const Header = (props) => {
     return (
         <section className='header'>
             <img src={logo} alt='Logo' className='logo'/>
             
             <br/>
-            <Form/>
+            <Form addSong={props.addSong} />
         </section>
     )
 }
