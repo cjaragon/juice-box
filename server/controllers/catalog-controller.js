@@ -5,14 +5,9 @@ let songs = [
         artist: "Vulfpeck",
         genre: "Funk"
     },
-    {
-        id: 1,
-        title: "Back Pocket",
-        artist: "Vulfpeck",
-        genre: "Funk"
-    }
+    
 ]
-let id = 2
+let id = 1
 
 module.exports = {
     sendSongs: (req, res) => {

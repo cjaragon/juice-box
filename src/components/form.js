@@ -42,8 +42,7 @@ class Form extends Component {
                 onChange={e => this.handleGenre(e.target.value)}/>
                 <button
                 className='form-button'
-                onClick={(e) => {
-                    this.props.addSong(e, this.state)}}
+                onClick={(e) => {this.props.addSong(e, this.state)}}
                 > Add Song </button>
             </form>
         )

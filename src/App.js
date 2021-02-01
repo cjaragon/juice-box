@@ -24,12 +24,17 @@ class App extends Component {
     .then(res =>{this.setState({ songList: res.data })})
   }
 
+  deleteSong = (id) => {
+    axios.delete(`/api/songs/${id}`)
+    .then(res => {this.setState({ songList: res.data })})
+  }
   
   render() {
     return (
       <div className="App">
         <Header addSong={this.addSong} />
-        <Jukebox songList={this.state.songList} />
+        <Jukebox songList={this.state.songList} 
+        deleteSong={this.deleteSong}/>
       </div>
     );
   }
