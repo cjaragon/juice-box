@@ -1,16 +1,37 @@
+import React, { Component } from 'react'
+class Edit extends Component {
+    constructor() {
+        super()
+        this.state = {
+            update: ''
+        }
+    }
 
-const Edit = () => {
+    handleChange = (val) => {
+        this.setState({ update: val })
+    }
 
+    updateSong = () => {
+        const {update} = this.state
+        const {updateSongFn, id, showEdit} = this.props
 
-    return (
+        updateSongFn(id, update)
+        showEdit()
+    }
 
-        <div className='edit-menu' >
-            <input className='input'
-                placeholder='Genre' />
-            <button className='song-buttons' >update</button>
-        </div>
+    render() {
+        return (
 
-    )
+            <div className='edit-menu' >
+                <input className='edit-input'
+                    placeholder='Genre'
+                    onChange={e => this.handleChange(e.target.value)} />
+                <button className='update-button' 
+                onClick={this.updateSong} >Update</button>
+            </div>
+
+        )
+    }
 }
 
 export default Edit

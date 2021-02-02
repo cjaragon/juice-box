@@ -21,7 +21,12 @@ class App extends Component {
   addSong = (e, val) => {
     e.preventDefault()
     axios.post('/api/songs', val )
-    .then(res =>{this.setState({ songList: res.data })})
+    .then(res => {this.setState({ songList: res.data })})
+  }
+
+  updateSong = (id, genre) => {
+    axios.put(`/api/songs/${id}`, {genre})
+    .then(res => this.setState({ songList: res.data}))
   }
 
   deleteSong = (id) => {
@@ -34,7 +39,8 @@ class App extends Component {
       <div className="App">
         <Header addSong={this.addSong} />
         <Jukebox songList={this.state.songList} 
-        deleteSong={this.deleteSong}/>
+        deleteSong={this.deleteSong}
+        updateSongFn={this.updateSong} />
       </div>
     );
   }

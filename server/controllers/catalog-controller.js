@@ -20,6 +20,8 @@ module.exports = {
         res.status(200).send(songs)
     },
     editGenre: (req, res) => {
+        console.log("body", req.body)
+        console.log("params", req.params)
         const {genre} = req.body
         const updateId = req.params.id
         const songIndex = songs.findIndex(song => song.id === +updateId)

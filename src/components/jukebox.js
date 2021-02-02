@@ -4,7 +4,8 @@ const Jukebox = (props) => {
     return (
         <div className='jukebox'>
             <Catalog songList={props.songList}
-            deleteSong={props.deleteSong}/>
+            deleteSong={props.deleteSong}
+            updateSongFn={props.updateSongFn} />
         </div>
     )
 }

@@ -27,7 +27,9 @@ class Song extends Component {
                     {
                         this.state.editing
                             ?
-                            <Edit />
+                            <Edit showEdit={this.showEdit}
+                                id={this.props.id}
+                                updateSongFn={this.props.updateSongFn} />
                             :
                             <p className='song-text'> Genre: {genre} </p>
                     }

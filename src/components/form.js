@@ -24,6 +24,11 @@ class Form extends Component {
     handleGenre = (val) => {
         this.setState({ genre: val })
     }
+
+    handleAdd = (e, val) => {
+        this.props.addSong(e, val)
+        this.setState({title: '', artist: '', genre: ''})
+    }
     
     render() {
         return (
@@ -31,18 +36,21 @@ class Form extends Component {
                 <input
                 className='input'
                 placeholder='Title'
-                onChange={e => this.handleTitle(e.target.value)}/>
+                onChange={e => this.handleTitle(e.target.value)}
+                value={this.state.title}/>
                 <input
                 className='input'
                 placeholder='Artist'
-                onChange={e => this.handleArtist(e.target.value)}/>
+                onChange={e => this.handleArtist(e.target.value)}
+                value={this.state.artist}/>
                 <input
                 className='input'
                 placeholder='Genre'
-                onChange={e => this.handleGenre(e.target.value)}/>
+                onChange={e => this.handleGenre(e.target.value)}
+                value={this.state.genre}/>
                 <button
                 className='form-button'
-                onClick={(e) => {this.props.addSong(e, this.state)}}
+                onClick={(e) => {this.handleAdd(e, this.state)}}
                 > Add Song </button>
             </form>
         )
