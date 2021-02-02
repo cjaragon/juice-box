@@ -1,8 +1,5 @@
-import React from 'react'
 import Form from './form'
 import logo from './logo.png'
-
-
 
 const Header = (props) => {
     return (
